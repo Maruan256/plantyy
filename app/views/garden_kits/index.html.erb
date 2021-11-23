@@ -1,0 +1,14 @@
+<div></div>
+  <% @garden_kits.each do |kit| %>
+    <div class="card-kit">
+
+      <img src="<%= kit.kit_url %>" />
+      <div class="card-kit-infos">
+        <div>
+          <h2><%= kit.kit_name %></h2>
+          <p>Short description here!</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

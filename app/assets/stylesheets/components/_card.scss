@@ -1,0 +1,35 @@
+.card-kit {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 250px;
+  margin: 20px;
+  display: block;
+}
+
+.card-kit > img {
+  height: 200px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.card-kit h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-kit p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-kit .card-kit-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
