@@ -35,7 +35,7 @@ GardenKit.create!(
   kit_url: "hhttps://images.unsplash.com/photo-1590931803077-ae8116f15edc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJyaXRpc2glMjBnYXJkZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
 )
 
-GardenKit.create!
+GardenKit.create!(
   kit_name: "Hello Spring",
   plant_id: Plant.last.id,
   kit_url: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
