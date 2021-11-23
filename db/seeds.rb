@@ -42,3 +42,37 @@ GardenKit.create!(
 )
 
 puts 'Finished!'
+
+puts 'Creating conditions...'
+
+Condition.create!(
+  title: "cat friendly"
+)
+Condition.create!(
+  title: "not cat friendly"
+)
+Condition.create!(
+  title: "water amount-high"
+)
+
+Condition.create!(
+  title: "water amount-medium"
+)
+
+Condition.create!(
+  title: "water amount-low"
+)
+
+Condition.create!(
+  title: "sunshine amount-high"
+)
+
+Condition.create!(
+  title: "sunshine amount-medium"
+)
+
+Condition.create!(
+  title: "sunshine amount-low"
+)
+
+puts "Conditions created!"
