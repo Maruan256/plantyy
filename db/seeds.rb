@@ -32,7 +32,7 @@ puts 'Creating garden kits...'
 GardenKit.create!(
   kit_name: "British garden",
   plant_id: Plant.first.id,
-  kit_url: "hhttps://images.unsplash.com/photo-1590931803077-ae8116f15edc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJyaXRpc2glMjBnYXJkZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+  kit_url: "https://images.unsplash.com/photo-1558293842-c0fd3db86157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 )
 
 GardenKit.create!(
