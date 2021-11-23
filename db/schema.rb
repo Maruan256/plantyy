@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_103213) do
+ActiveRecord::Schema.define(version: 2021_11_23_140743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_103213) do
     t.bigint "plant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "kit_url"
     t.index ["plant_id"], name: "index_garden_kits_on_plant_id"
   end
 
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_103213) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "plant_url"
   end
 
   create_table "plants_conditions", force: :cascade do |t|
