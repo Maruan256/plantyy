@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
   def show
-    @plants = Plant.find(params[:id])
+    @plant = Plant.find(params[:id])
   end
 end
