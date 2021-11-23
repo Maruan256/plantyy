@@ -1,0 +1,20 @@
+<form action="">
+<input type="text" placeholder="test - this will be replaced later">
+</form>
+
+
+<div>
+  <% @garden_kits.each do |kit| %>
+    <div class="card-kit">
+
+      <img src="<%= kit.kit_url %>" />
+      <div class="card-kit-infos">
+        <div>
+          <h2><%= kit.kit_name %></h2>
+          <p>Short description here!</p>
+          <p class="category">Categories: cat safe, sunny</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
