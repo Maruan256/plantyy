@@ -27,21 +27,7 @@
 #   plant_url: "https://images.unsplash.com/photo-1518701005037-d53b1f67bb1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHVsaXB8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
 # )
 
-# puts 'Creating garden kits...'
 
-# GardenKit.create!(
-#   kit_name: "British garden",
-#   plant_id: Plant.first.id,
-#   kit_url: "https://images.unsplash.com/photo-1558293842-c0fd3db86157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-# )
-
-# GardenKit.create!(
-#   kit_name: "Hello Spring",
-#   plant_id: Plant.last.id,
-#   kit_url: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-# )
-
-# puts 'Finished!'
 
 require "open-uri"
 require "nokogiri"
@@ -106,9 +92,18 @@ end
 
 puts "#{Plant.count} plants created."
 
-# puts "Writing plants.yml"
-# File.open("plants.yml", "w") do |f|
-#   f.write(plants.to_yaml)
-# end
+puts 'Creating garden kits...'
 
-puts "Done."
+GardenKit.create!(
+  kit_name: "British garden",
+  plant_id: Plant.first.id,
+  kit_url: "https://images.unsplash.com/photo-1558293842-c0fd3db86157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+)
+
+GardenKit.create!(
+  kit_name: "Hello Spring",
+  plant_id: Plant.last.id,
+  kit_url: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+)
+
+puts 'Finished!'
