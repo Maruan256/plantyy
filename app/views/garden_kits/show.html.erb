@@ -7,13 +7,15 @@
 </div>
 
 <div class="link">
-  <%= link_to plant_path(@garden_kit.plant.id) do %>
-  <div class="card-plant">
-    <img src="<%= @garden_kit.plant.plant_url %>" />
-    <div class="card-plant-infos">
-      <h2><%= @garden_kit.plant.name %></h2>
-      <p><%= @garden_kit.plant.description %></p>
+  <% @plants.each do |plant| %>
+    <%= link_to plant_path(plant.id) do %>
+    <div class="card-plant">
+      <img src="<%= plant.plant_url %>" />
+      <div class="card-plant-infos">
+        <h2><%= plant.name %></h2>
+        <p><%= plant.description %></p>
+      </div>
     </div>
-  </div>
+    <% end %>
   <% end %>
 </div>

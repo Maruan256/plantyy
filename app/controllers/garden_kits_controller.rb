@@ -5,5 +5,6 @@ class GardenKitsController < ApplicationController
 
   def show
     @garden_kit = GardenKit.find(params[:id])
+    @plants = @garden_kit.plants
   end
 end
