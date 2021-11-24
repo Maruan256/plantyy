@@ -47,11 +47,16 @@ require "open-uri"
 require "nokogiri"
 require "pry"
 
+puts "Destroying all plants"
+Plant.destroy_all
+puts "Plants destroyed"
+
+
 def fetch_plant_urls
   all_url = "https://www.ikea.com/ie/en/cat/plants-10779/"
   doc = Nokogiri::HTML(URI.open(all_url).read)
   plants = doc.search(".range-revamp-product-compact__bottom-wrapper a")
-  plants.take(15).map do |plant|
+  plants.take(3).map do |plant|
     uri = URI.parse(plant.attributes["href"].value)
     uri.scheme = "https"
     uri.host = "www.ikea.com"
@@ -87,17 +92,22 @@ urls = fetch_plant_urls
 plants_hashes = []
 puts urls
 
-plants = urls.map do |url|
+urls.map do |url|
   puts "Scraping #{url}"
   plants_hashes << scrape_plant(url)
 end
 
 p plants_hashes
 
+puts "creating plants"
+
 plants_hashes.each do |plant|
   # plant = {:name=>"DISCHIDIA", :description=>"You can hang up this plant right away, or plant it in another pot if you like. With hanging plants, you can create a lush wall of greenery that makes the home feel more vibrant and lifts your well-being."}
-  Plant.create(name: plant.name, description: plant.description, plant_url: plant.plant_url)
+  Plant.create(name: plant[:name], description: plant[:description], plant_url: plant[:plant_url])
+  puts plant[:name]
 end
+
+puts "#{Plant.count} plants created"
 
 # puts "Writing plants.yml"
 # File.open("plants.yml", "w") do |f|
