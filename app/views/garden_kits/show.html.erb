@@ -1,0 +1,19 @@
+<div class="banner-kit" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden_kit.kit_url %>);">
+  <div class="container">
+    <h1><%= @garden_kit.kit_name %></h1>
+    <p>Welcome to <%= @garden_kit.kit_name %> kit!</p>
+    <%= link_to "Get this kit", "#", class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="link">
+  <%= link_to plant_path(@garden_kit.plant.id) do %>
+  <div class="card-plant">
+    <img src="<%= @garden_kit.plant.plant_url %>" />
+    <div class="card-plant-infos">
+      <h2><%= @garden_kit.plant.name %></h2>
+      <p><%= @garden_kit.plant.description %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
