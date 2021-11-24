@@ -73,9 +73,17 @@ garden1 = MyGarden.create!(user: user1)
 puts 'Creating garden kits...'
 
 GardenKit.create!(
-  kit_name: Plant.first.name,
+  kit_name: "English Garden",
   plants: [Plant.first],
-  my_garden: garden1
+  my_garden: garden1,
+  kit_url: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+)
+
+GardenKit.create!(
+  kit_name: "French Garden",
+  plants: [Plant.last],
+  my_garden: garden1,
+  kit_url: "https://images.unsplash.com/photo-1580600301354-0ce8faef576c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 )
 
 puts 'Finished!'
