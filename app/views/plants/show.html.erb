@@ -5,7 +5,30 @@
 <%# <%= @plant.description %>
 <%# We don't have the description in the current seed file, so I will put a place holder here %>
 <ul>
-<li><i class="fas fa-tint"></i></li>
-<li><i class="fas fa-sun"></i></li>
-<li><i class="fas fa-cat"></i></li>
+<li><i class="fas fa-tint"></i>
+<% if @plant.water == "high" %>
+<%= "Needs a lot of water" %>
+<% elsif @plant.water == "medium" %>
+<%= "Needs moderate amount of water " %>
+<% else %>
+<%= "Doesn't need a lot of water" %>
+<% end %>
+</li>
+
+<li><i class="fas fa-sun"></i>
+<% if @plant.sunlight == "high" %>
+<%= "Needs a lot of sunshine" %>
+<% elsif @plant.sunlight == "medium" %>
+<%= "Needs moderate amount of sunshine " %>
+<% else %>
+<%= "Doesn't need a lot of sunshine" %>
+<% end %>
+</li>
+
+<li><i class="fas fa-cat"></i>
+<% if @plant.cat == "toxic" %>
+<%= "Toxic to cat" %>
+<% else %>
+<%= "Not toxic to cat" %>
+<% end %></li>
 </ul>
