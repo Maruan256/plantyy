@@ -16,7 +16,6 @@ user1 = User.create!(
   password: "123456"
 )
 
-puts "creating plants..."
 
 plant1 = Plant.create!(
   name: "Monstera",
