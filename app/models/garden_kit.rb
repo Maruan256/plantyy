@@ -1,4 +1,5 @@
 class GardenKit < ApplicationRecord
   has_many :kit_plants
-  has_many :garden_kit_in_gardens
+  has_many :plants, through: :kit_plants
+  belongs_to :my_garden
 end

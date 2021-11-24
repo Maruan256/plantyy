@@ -10,25 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_123200) do
+ActiveRecord::Schema.define(version: 2021_11_24_140226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "garden_kit_in_gardens", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "garden_kit_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["garden_kit_id"], name: "index_garden_kit_in_gardens_on_garden_kit_id"
-    t.index ["user_id"], name: "index_garden_kit_in_gardens_on_user_id"
-  end
-
   create_table "garden_kits", force: :cascade do |t|
     t.string "kit_name"
+    t.bigint "my_garden_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "kit_url"
+    t.index ["my_garden_id"], name: "index_garden_kits_on_my_garden_id"
   end
 
   create_table "kit_plants", force: :cascade do |t|
@@ -38,14 +31,24 @@ ActiveRecord::Schema.define(version: 2021_11_24_123200) do
     t.index ["plant_id"], name: "index_kit_plants_on_plant_id"
   end
 
+  create_table "my_gardens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_my_gardens_on_user_id"
+  end
+
   create_table "my_plants", force: :cascade do |t|
     t.bigint "plant_id", null: false
     t.integer "water_level"
     t.integer "fertilizer_level"
     t.integer "harvest_level"
     t.boolean "bring_in"
-    t.bigint "garden_kit_in_garden_id", null: false
-    t.index ["garden_kit_in_garden_id"], name: "index_my_plants_on_garden_kit_in_garden_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active"
+    t.bigint "my_garden_id"
+    t.index ["my_garden_id"], name: "index_my_plants_on_my_garden_id"
     t.index ["plant_id"], name: "index_my_plants_on_plant_id"
   end
 
@@ -76,10 +79,10 @@ ActiveRecord::Schema.define(version: 2021_11_24_123200) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "garden_kit_in_gardens", "garden_kits"
-  add_foreign_key "garden_kit_in_gardens", "users"
+  add_foreign_key "garden_kits", "my_gardens"
   add_foreign_key "kit_plants", "garden_kits"
   add_foreign_key "kit_plants", "plants"
-  add_foreign_key "my_plants", "garden_kit_in_gardens"
+  add_foreign_key "my_gardens", "users"
+  add_foreign_key "my_plants", "my_gardens"
   add_foreign_key "my_plants", "plants"
 end

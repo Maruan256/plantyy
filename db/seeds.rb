@@ -5,43 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "creating User"
 
-condition1 = Condition.create!(
-  title: "cat friendly"
+user1 = User.create!(
+  first_name: "Yi-An",
+  last_name: "Ko",
+  username:"yian",
+  email: "yian80413@gmail.com",
+  address: "Berlin 1",
+  password: "123456"
 )
-Condition.create!(
-  title: "not cat friendly"
-)
-Condition.create!(
-  title: "water amount-high"
-)
-
-Condition.create!(
-  title: "water amount-medium"
-)
-
-Condition.create!(
-  title: "water amount-low"
-)
-
-Condition.create!(
-  title: "sunshine amount-high"
-)
-
-Condition.create!(
-  title: "sunshine amount-medium"
-)
-
-Condition.create!(
-  title: "sunshine amount-low"
-)
-
-puts "Conditions created!"
-
-
-puts "cleaning DB..."
-GardenKit.destroy_all
-Plant.destroy_all
 
 puts "creating plants..."
 
@@ -55,28 +28,25 @@ plant2 = Plant.create!(
   plant_url: "https://images.unsplash.com/photo-1477554193778-9562c28588c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cnViYmVyJTIwdHJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
 )
 
-plant3 = Plant.create!(
-  name: "Tulip",
-  plant_url: "https://images.unsplash.com/photo-1518701005037-d53b1f67bb1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHVsaXB8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-)
+puts 'Creating my garden ...'
+garden1 = MyGarden.create!(
+  user: user1,)
+
 
 puts 'Creating garden kits...'
 
 GardenKit.create!(
   kit_name: "British garden",
-  plant_id: Plant.first.id,
+  plants: [plant1],
+  my_garden: garden1,
   kit_url: "https://images.unsplash.com/photo-1558293842-c0fd3db86157?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 )
 
-GardenKit.create!(
-  kit_name: "Hello Spring",
-  plant_id: Plant.last.id,
-  kit_url: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-)
+# GardenKit.create!(
+#   kit_name: "Hello Spring",
+#   plants: [plant2],
+
+#   kit_url: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+# )
 
 puts 'Finished!'
-
-PlantsCondition.create!(
-  plant: plant1,
-  condition: condition1
-)
