@@ -1,3 +1,4 @@
 class GardenKit < ApplicationRecord
-  belongs_to :plant
+  has_many :kit_plants
+  has_many :garden_kit_in_gardens
 end
