@@ -1,21 +1,23 @@
-<form action="">
-<input type="text" placeholder="test - this will be replaced later">
-</form>
+<div class="container">
+  <form action="">
+  <input type="text" placeholder="test - this will be replaced later">
+  </form>
 
 
-<div>
-  <% @garden_kits.each do |kit| %>
-    <%= link_to garden_kit_path(kit.id) do %>
-      <div class="card-kit">
-        <img src="<%= kit.kit_url %>" />
-        <div class="card-kit-infos">
-          <div>
-            <h2><%= kit.kit_name %></h2>
-            <p>Short description here!</p>
-            <p class="category">Categories: cat safe, sunny</p>
+  <div>
+    <% @garden_kits.each do |kit| %>
+      <%= link_to garden_kit_path(kit.id) do %>
+        <div class="card-kit">
+          <img src="<%= kit.kit_url %>" />
+          <div class="card-kit-infos">
+            <div>
+              <h2><%= kit.kit_name %></h2>
+              <p>Short description here!</p>
+              <p class="category">Categories: cat safe, sunny</p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

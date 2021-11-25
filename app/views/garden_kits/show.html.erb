@@ -7,16 +7,18 @@
   </div>
 </div>
 
-<div class="link">
-  <% @plants.each do |plant| %>
-    <%= link_to plant_path(plant.id) do %>
-    <div class="card-plant">
-      <img src="<%= plant.plant_url %>" />
-      <div class="card-plant-infos">
-        <h2><%= plant.name %></h2>
-        <p><%= plant.description %></p>
+<div class="container">
+  <div class="link">
+    <% @plants.each do |plant| %>
+      <%= link_to plant_path(plant.id) do %>
+      <div class="card-plant">
+        <img src="<%= plant.plant_url %>" />
+        <div class="card-plant-infos">
+          <h2><%= plant.name %></h2>
+          <p><%= plant.description.split(".").first%>.</p>
+        </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
