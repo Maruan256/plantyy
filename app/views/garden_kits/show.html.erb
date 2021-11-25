@@ -3,7 +3,7 @@
   <div class="container">
     <h1><%= @garden_kit.kit_name %></h1>
     <p>Welcome to <%= @garden_kit.kit_name %> kit!</p>
-    <%= link_to "Get this kit", "#", class: "btn btn-flat" %>
+    <%= link_to "Get this kit",  my_garden_index_path(kit_id: @garden_kit), method: :POST, class: "btn btn-flat" %>
   </div>
 </div>
 

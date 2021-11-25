@@ -2,6 +2,24 @@
 
 
 
-<p>Welcome to you Garden <%= "#{current_user.first_name}" %></p>
-<%# <%= @plant.description %>
-<%# We don't have the description in the current seed file, so I will put a place holder here %>
+<div class="banner-kit" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden_photo.kit_url %>);">
+  <div class="container">
+    <h1><%= @my_garden.user.first_name %></h1>
+    <p>Welcome to your Garden <%= @my_garden.user.first_name %> </p>
+    <%= link_to "Get this kit", "#", class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="link">
+  <% @my_garden.my_plants.each do |my_plant| %>
+    <%= link_to plant_path(my_plant.plant.id) do %>
+    <div class="card-plant">
+      <%# <img src="<%= plant.plant_url %>" /> %>
+      <div class="card-plant-infos">
+        <h2><%= my_plant.plant.name %></h2>
+        <p><%= my_plant.plant.description %></p>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
