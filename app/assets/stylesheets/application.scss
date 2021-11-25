@@ -12,9 +12,11 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  background-color: $light-pink;
+}
+
 
 .main-content {
   margin-bottom: 100px;
-  margin-top: 20px;
 }
-

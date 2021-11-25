@@ -14,7 +14,7 @@
         <img src="<%= plant.plant_url %>" />
         <div class="card-plant-infos">
           <h2><%= plant.name %></h2>
-          <p><%= plant.description %></p>
+          <p><%= plant.description.split(".").first%>.</p>
         </div>
       </div>
       <% end %>
