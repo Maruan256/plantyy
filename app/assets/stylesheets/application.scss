@@ -14,9 +14,17 @@
 
 body {
   background-color: $light-pink;
+  font-family: 'Sifonn Pro';
+  font-weight: lighter
 }
 
-
+p {
+  font-family: 'Playfair Display';
+}
 .main-content {
   margin-bottom: 100px;
 }
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
