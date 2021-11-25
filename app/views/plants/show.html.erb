@@ -1,10 +1,13 @@
-<div class="container">
-  <h1><%=@plant.name%></h1>
-  <%= image_tag @plant.plant_url, class: "img-homepage" %>
+<div class="banner-plant">
+  <div class="container">
+    <h1><%= @plant.name %></h1>
+    <%= image_tag @plant.plant_url, class: "img-homepage" %>
 
-  <p>This is a nice house plant, easy to grow!</p>
-  <%# <%= @plant.description %>
-  <%# We don't have the description in the current seed file, so I will put a place holder here %>
+  </div>
+</div>
+
+<div class="container">
+  <p><%= @plant.description %></p>
   <ul>
   <li><i class="fas fa-tint"></i>
   <% if @plant.water == "high" %>
