@@ -3,18 +3,42 @@
   height: auto;
 }
 
-#leaf-container-left{
-  position: relative;
-  min-width: 50%;
-}
+// .leaf-container-left{
+//   position: relative;
+//   min-width: 50%;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+// }
 
 // #leaf-container-right {
 
 // }
 
 .leaf-left{
-  position: absolute;
-  left: -100px;
+  left: -50px;
+  top: -30px;
   width: 200px;
   height: auto;
+  position: absolute;
+
+}
+
+
+// .leaf-container-right{
+//   position: relative;
+//   min-width: 50%;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+// }
+
+// #leaf-container-right {
+
+// }
+
+.leaf-right{
+  right: -50px;
+  top: -30px;
+  width: 200px;
+  height: auto;
+  position: absolute
 }

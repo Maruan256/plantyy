@@ -1,7 +1,51 @@
 // Specific CSS for your home-page
 
 #how-it-works {
-  margin-top: 120px;
+  margin-top: 300px;
+  margin-bottom: 50px;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+#step-4 {
+  margin-top: 140px;
+}
+
+.steps h3 {
+  font-size: 25px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+}
+
+.steps h4 {
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.steps p {
+  font-size: 16px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.steps-placeholder {
+  width: 50%;
+}
+
+.step-container{
+position: relative;
+margin-bottom: 20px;
+margin-top: 60px;
+}
+.text-left {
+ width: 50%;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
 }
 // .main {
 //   position:relative
