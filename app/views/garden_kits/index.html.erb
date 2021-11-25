@@ -1,21 +1,40 @@
-<form action="">
-<input type="text" placeholder="test - this will be replaced later">
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="h2 my-3 d-flex justify-content-center">Kits for your garden 🌿</h1>
+        <div>
+        <%= form_with url: garden_kits_path, method: :get, html: {class: 'mb-4' } do |f|%>
+          <%= f.text_field :query,
+                          class: 'form-control',
+                          placeholder: 'I\'m looking for...',
+                          value: params[:query]
+                          %>
+          <% end %>
+           <%= render 'list', garden_kits: @garden_kits %>
+        </div>
+        <%# <form action="">
+        <input type="text" placeholder="test - this will be replaced later">
+        </form> %>
 
 
-<div>
-  <% @garden_kits.each do |kit| %>
-    <%= link_to garden_kit_path(kit.id) do %>
-      <div class="card-kit">
-        <img src="<%= kit.kit_url %>" />
-        <div class="card-kit-infos">
-          <div>
-            <h2><%= kit.kit_name %></h2>
-            <p>Short description here!</p>
-            <p class="category">Categories: cat safe, sunny</p>
-          </div>
+
+        <div>
+          <% @garden_kits.each do |kit| %>
+            <%= link_to garden_kit_path(kit.id) do %>
+              <div class="card-kit">
+                <img src="<%= kit.kit_url %>" />
+                <div class="card-kit-infos">
+                  <div>
+                    <h2><%= kit.kit_name %></h2>
+                    <p>Short description here!</p>
+                    <p class="category">Categories: cat safe, sunny</p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>
