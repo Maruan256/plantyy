@@ -3,7 +3,6 @@
 
 require "open-uri"
 require "nokogiri"
-require "pry"
 
 puts "Destroying all plants"
 Plant.destroy_all
