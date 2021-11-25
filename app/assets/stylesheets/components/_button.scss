@@ -1,8 +1,17 @@
 .btn-flat {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
   background: $dark-green;
   transition: background 0.3s ease;
   border-radius: 25px;
+  box-shadow: 2px 2px 3px gray;
+}
+
+.go-down-button {
+width: 60px;
+height: auto;
+position: absolute;
+top: 450px;
+left: 50%;
+margin-left: -30px;
 }

@@ -1,13 +1,51 @@
-<h1>PLANTYY</h1>
-<button><%=link_to "Get Started", garden_kits_path%></button>
-<h2>How it works</h2>
-<h3>Choose From Our Awsome Kits</h3>
-<p>Create this awesome garden!
-check out our unique kits!</p>
-<img class="img-homepage" src="plant.jpg" alt="">
-<h3>Create Your Garden</h3>
-<p>infuse your home
-with some beautyy
-digital and in real life</p>
-<img class="img-homepage" src="garden-open-gate-vector.jpg" alt="">
+<div class= "main text-center">
+  <div class = "banner-kit d-flex flex-column justify-content-center align-items-center ">
+    <h1>PLANTYY</h1>
+    <br>
+    <div class = "btn-flat"><%=link_to "Get Started", garden_kits_path%></div>
+    <div>
+      <%= link_to "#how-it-works" do %>
+        <%= image_tag ("go-down-button.png"), class: "go-down-button" %>
+      <% end  %>
+      </div>
+  </div>
+  <div id="how-it-works">
+      <h2>How it works</a></h2>
 
+      <div class = "d-flex justify-content-between">
+        <div id = "leaf-container-left"><%= image_tag ('step1-leaf.png'), class: "leaf-left" %></div>
+        <div class = "text-left">
+          <h3>Step 1</h3>
+          <h4>Browser/Search our amazing kits!</h4>
+          <p>You don't have to assemble your garden, we do it for you!</p>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h3>Step 2</h3>
+          <h4>Choose the kit</h4>
+          <p>You can even click into the individual plant to see more details!
+          For example, whether they are cat-friendly!</p>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h3>Step 3</h3>
+          <h4>Once decided, add the kit(s) into your own garden!</h4>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h3>Step 4</h3>
+          <h4>Activate your plants!</h4>
+          <p>Sync your garden with your real plant: plant it, activate it in your
+            garden, get notifications for the next steps of taking care of them!</p>
+        </div>
+      </div>
+
+
+  </div>
+</div>
