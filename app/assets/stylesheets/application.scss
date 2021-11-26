@@ -13,29 +13,3 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-body {
-  background-color: $light-pink;
-  font-family: $my-font-robot;
-}
-
-p {
-  font-family: $my-font-robot;
-}
-.main-content {
-  margin-bottom: 100px;
-}
-a, a:hover, a:focus, a:active {
-      text-decoration: none;
-      color: inherit;
- }
-h2 {
-  font-family: $my-font-robot;
-}
-
-h3 {
-font-family: $my-font-robot;
-}
-.h3 {
-font-family: $my-font-robot;
-}
