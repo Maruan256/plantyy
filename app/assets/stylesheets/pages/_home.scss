@@ -33,11 +33,23 @@ body {
   width: 50%;
 }
 
-.step-container{
+.step-container-left{
 position: relative;
 margin-bottom: 20px;
-margin-top: 60px;
+margin-top: 26px;
+height: fit-content;
+align-items: top;
 }
+
+.step-container-right{
+position: relative;
+margin-bottom: 20px;
+margin-top: 76px;
+overflow: hidden;
+height: 200px;
+align-items: top;
+}
+
 .text-left {
  width: 50%;
 }
@@ -47,6 +59,12 @@ h2 {
   font-family: 'Amatic SC', cursive;
   font-weight: bolder;
 }
+
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }
 // .main {
 //   position:relative
 // }
