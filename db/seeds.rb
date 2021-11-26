@@ -3,7 +3,6 @@
 
 require "open-uri"
 require "nokogiri"
-require "pry"
 
 puts "Destroying all plants"
 Plant.destroy_all
@@ -58,7 +57,7 @@ puts "#{Plant.count} plants created."
 
 puts "Creating User"
 
-user1 = User.create!(
+user_one = User.create!(
   first_name: "Yi-An",
   last_name: "Ko",
   username: "yian",
@@ -67,23 +66,61 @@ user1 = User.create!(
   password: "123456"
 )
 
+user_two = User.create!(
+  first_name: "Akiho",
+  last_name: "Hamamoto",
+  username: "akiho",
+  email: "ahamamoto1125@gmail.com",
+  address: "Berlin 2",
+  password: "ahamamoto1125@gmail.com"
+)
+
 puts 'Creating my garden ...'
-garden1 = MyGarden.create!(user: user1)
+garden_one = MyGarden.create!(user: user_one)
+garden_two = MyGarden.create!(user: user_two)
 
 puts 'Creating garden kits...'
 
 GardenKit.create!(
   kit_name: "English Garden",
   plants: [Plant.first],
-  my_garden: garden1,
+  my_garden: garden_one,
   kit_url: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 )
 
 GardenKit.create!(
   kit_name: "French Garden",
   plants: [Plant.last],
-  my_garden: garden1,
+  my_garden: garden_two,
   kit_url: "https://images.unsplash.com/photo-1580600301354-0ce8faef576c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+)
+
+GardenKit.create!(
+  kit_name: "Cozy Garden",
+  plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
+  my_garden: garden_two,
+  kit_url: "https://images.unsplash.com/photo-1511671090499-b715092e944f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y296eSUyMGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+)
+
+GardenKit.create!(
+  kit_name: "Tropical Garden",
+  plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
+  my_garden: garden_one,
+  kit_url: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJvcGljYWwlMjBnYXJkZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+)
+
+GardenKit.create!(
+  kit_name: "Fresh Garden",
+  plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
+  my_garden: garden_one,
+  kit_url: "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnJlc2glMjBnYXJkZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+)
+
+GardenKit.create!(
+  kit_name: "Classic Garden",
+  plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
+  my_garden: garden_two,
+  kit_url: "https://images.unsplash.com/photo-1470755008296-2939845775eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
 )
 
 puts 'Finished!'

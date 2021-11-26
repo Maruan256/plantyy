@@ -37,10 +37,13 @@
 .card-plant {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: $baige-yellow;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 6px;
+  margin: 10px;
+  color: $light-purple-grey;
 }
 
 .link a:hover{
@@ -69,4 +72,20 @@
 
 .card-plant .card-plant-infos {
   padding: 16px;
+}
+
+.big-card-plant {
+  width: 330px;
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  margin: 20px auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.big-card-plant h1 {
+  color: $light-purple-grey;
+  font-size: 32px;
+  font-weight: bold;
 }
