@@ -19,13 +19,17 @@
 .icon-container {
   margin-top: 50px;
   margin-bottom: 50px;
-
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 16px;
 }
 
-.fas {
-    // background-color: white;
-    border-radius: 50%;
-    border: black;
+.homepage-icon {
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
   }
 
 
@@ -70,9 +74,16 @@ height: 200px;
 align-items: top;
 }
 
-.text-left {
+.text-leftside {
  width: 50%;
- padding: 5px;
+ padding-left: 18px;
+ text-align: left;
+}
+
+.text-rightside {
+ width: 50%;
+ padding: 10px;
+text-align: left;
 }
 
 h2 {
