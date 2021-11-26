@@ -2,12 +2,13 @@
   <%# <div class="row">
     <div class="col"> %>
       <h1 class="h2 my-3 d-flex justify-content-center">Kits for your garden 🌿</h1>
-        <div class="d-flex justify-content-center flex-wrap">
+        <div data-controller="search-garden-kits">
         <%= form_with url: garden_kits_path, method: :get, html: {class: 'mb-4' } do |f|%>
           <%= f.text_field :query,
                           class: 'form-control',
                           placeholder: 'I\'m looking for...',
-                          value: params[:query]
+                          value: params[:query],
+                          data: { search_garden_kits_target: 'searchInput', action: 'keyup->search_garden_kits#update'}
                           %>
           <% end %>
             <%= render 'list', garden_kits: @garden_kits %>
