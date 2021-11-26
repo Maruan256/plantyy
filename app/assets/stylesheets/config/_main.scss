@@ -6,15 +6,21 @@ html {
   margin-bottom: 100px;
 }
 
-p {
-  color: $light-purple-grey;
-}
-
 ul {
   padding-left: 0;
   color: $light-purple-grey;
 }
+
 .container {
   padding-right: 30px;
   padding-left: 30px;
+}
+
+body {
+  background-color: $light-pink;
+}
+
+
+p {
+  color: $light-purple-grey;
 }
