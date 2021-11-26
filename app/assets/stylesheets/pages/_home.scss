@@ -1,4 +1,16 @@
 // Specific CSS for your home-page
+.homepage-title {
+  h1 {
+    font-family: $headers-font;
+  }
+  h2 {
+    font-family: $my-font-robot;
+  }
+  h3 {
+    font-family: $my-font-robot;
+  }
+}
+
 
 #how-it-works {
   margin-top: 50px;
@@ -11,7 +23,7 @@
 }
 
 .fas {
-    background-color: white;
+    // background-color: white;
     border-radius: 50%;
     border: black;
   }
