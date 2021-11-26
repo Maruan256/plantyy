@@ -11,7 +11,7 @@ $homepage-steps-font: 'Amatic SC', "cursive";
   font-family: "Sifonn Pro";
   font-family: 'Sifonn Pro';
   font-style: normal;
-  src: local('Sifonn Pro'), url('SIFONN_PRO.woff') format('woff');
+  src: local('Sifonn Pro'), font-url('SIFONN_PRO.woff') format('woff');
 
 }
 $body-font: "Playfair Display", "Helvetica", "sans-serif";
