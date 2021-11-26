@@ -5,7 +5,7 @@
   width: 250px;
   margin: 20px;
   display: block;
-  font-family: 'Sifonn Pro';
+  font-family: $my-font-robot;
 }
 
 .card-kit > img {
@@ -18,14 +18,14 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  font-family: 'Sifonn Pro';
+  font-family: $my-font-robot;
 }
 
 .card-kit p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
-  font-family: 'Sifonn Pro';
+  font-family: $my-font-robot;
 }
 
 
@@ -35,7 +35,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  font-family: 'Sifonn Pro';
+  font-family: $my-font-robot;
 }
 
 .card-plant {
@@ -64,7 +64,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  font-family: 'Sifonn Pro';
+  font-family: $my-font-robot;
 }
 
 .card-plant p {
@@ -73,7 +73,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
-  font-family: 'Sifonn Pro';
+  font-family: $my-font-robot;
 }
 
 .card-plant .card-plant-infos {
