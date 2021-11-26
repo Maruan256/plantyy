@@ -1,13 +1,21 @@
 // Specific CSS for your home-page
 
 #how-it-works {
-  margin-top: 300px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
+.icon-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
 
-body {
-  scroll-behavior: smooth;
 }
+
+.fas {
+    background-color: white;
+    border-radius: 50%;
+    border: black;
+  }
+
 
 #step-4 {
   margin-top: 140px;
@@ -52,6 +60,7 @@ align-items: top;
 
 .text-left {
  width: 50%;
+ padding: 5px;
 }
 
 h2 {
