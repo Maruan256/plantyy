@@ -79,3 +79,19 @@
 .card-plant .card-plant-infos {
   padding: 16px;
 }
+
+.big-card-plant {
+  width: 330px;
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  margin: 20px auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.big-card-plant h1 {
+  color: $light-purple-grey;
+  font-size: 32px;
+  font-weight: bold;
+}

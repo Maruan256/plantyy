@@ -1,4 +1,22 @@
 .img-homepage{
+  width: 230px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.leaf-left{
+  left: -50px;
+  top: -30px;
   width: 200px;
   height: auto;
+  position: absolute;
+
+}
+
+.leaf-right{
+  right: -50px;
+  top: -16px;
+  width: 200px;
+  height: auto;
+  position: absolute;
 }
