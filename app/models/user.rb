@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :my_garden, dependent: :destroy
   has_many :garden_kits, through: :my_garden
+  has_one_attached :photo
 end
