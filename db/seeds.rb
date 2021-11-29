@@ -83,6 +83,7 @@ puts 'Creating garden kits...'
 
 GardenKit.create!(
   kit_name: "English Garden",
+  price: "50",
   plants: [Plant.first],
   my_garden: garden_one,
   description: "Want a cuppa tea? This garden will make you feel like a queen👑",
@@ -91,6 +92,7 @@ GardenKit.create!(
 
 GardenKit.create!(
   kit_name: "French Garden",
+  price: "39.99",
   plants: [Plant.last],
   my_garden: garden_two,
   description: "Plant this kit, you won't need that flight ticket to see Versailles anymore!🥖",
@@ -99,6 +101,7 @@ GardenKit.create!(
 
 GardenKit.create!(
   kit_name: "Cozy Garden",
+  price: "49.99",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_two,
   description: "Do you want to make your place feel more like home? This kit is made for you🏠",
@@ -107,6 +110,7 @@ GardenKit.create!(
 
 GardenKit.create!(
   kit_name: "Tropical Garden",
+  price: "60",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_one,
   description: "We all know how the winter could be, let's pretend we are in a tropical country by planting this kit🌴",
@@ -115,6 +119,7 @@ GardenKit.create!(
 
 GardenKit.create!(
   kit_name: "Fresh Garden",
+  price: "50",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_one,
   description: "Are you a fan of frech herbs and smell? Buy this kit to get all the herbs from your own garden🍅",
@@ -123,6 +128,7 @@ GardenKit.create!(
 
 GardenKit.create!(
   kit_name: "Classic Garden",
+  price: "29.99",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_two,
   description: "You don't know what you want yet? Get this classic garden kit as a start 😉",
