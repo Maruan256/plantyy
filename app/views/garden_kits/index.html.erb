@@ -3,12 +3,12 @@
     <div class="col"> %>
       <h1 class="h2 my-3 d-flex justify-content-center">Garden inspirations🌿</h1>
         <div data-controller="search-garden-kits">
-        <%= form_with url: garden_kits_path, method: :get, html: {class: 'mb-4' } do |f|%>
+        <%= form_with url: garden_kits_path, method: :get, html: {class: 'mb-4', data: { search_garden_kits_target: 'form'} } do |f|%>
           <%= f.text_field :query,
                           class: 'form-control',
                           placeholder: 'I\'m looking for...',
                           value: params[:query],
-                          data: { search_garden_kits_target: 'searchInput', action: 'keyup->search_garden_kits#update'}
+                          data: { search_garden_kits_target: 'input', action: 'keyup->search-garden-kits#update'}
                           %>
           <% end %>
             <%= render 'list', garden_kits: @garden_kits %>
