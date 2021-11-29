@@ -4,9 +4,23 @@
 require "open-uri"
 require "nokogiri"
 
+puts "Destroying all garden_kits"
+GardenKit.destroy_all
+puts "garden_kits destroyed"
+
 puts "Destroying all plants"
 Plant.destroy_all
 puts "Plants destroyed"
+
+puts "Destroying all people"
+User.destroy_all
+puts "people destroyed"
+
+puts "Destroying all gardens"
+MyGarden.destroy_all
+puts "gardens destroyed"
+
+
 
 def fetch_plant_urls
   all_url = "https://www.ikea.com/ie/en/cat/plants-10779/"

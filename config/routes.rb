@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'my_garden/show'
+
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:show]

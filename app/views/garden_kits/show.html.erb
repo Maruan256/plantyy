@@ -3,7 +3,11 @@
   <div class="container">
     <h1><%= @garden_kit.kit_name %></h1>
     <p>Welcome to <%= @garden_kit.kit_name %> kit!</p>
-    <%= link_to "Get this kit",  my_garden_index_path(kit_id: @garden_kit), method: :POST, class: "btn btn-flat" %>
+    <% if MyGarden.find_by(user_id: current_user.id).present? %>
+    <%= link_to "Get this kit", my_garden_path(current_user.my_garden, kit_id: @garden_kit), method: :PATCH, class: "btn btn-flat" %>
+    <% else %>
+    <%= link_to "Get this kit", my_garden_index_path(kit_id: @garden_kit), method: :POST, class: "btn btn-flat" %>
+    <% end %>
   </div>
 </div>
 
