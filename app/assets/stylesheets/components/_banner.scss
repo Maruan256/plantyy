@@ -1,10 +1,46 @@
+.banner-homepage {
+  background-size: cover;
+  padding: 150px 0;
+  width: 100%;
+  height: 770px;
+  background-image: url('homepage-banner.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+
+.banner-homepage h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 60px;
+  font-weight: bold;
+  font-family: $headers-font;
+
+  text-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bolder;
+  font-family: $headers-font;
+  letter-spacing: 5px;
+
+}
+
+.banner-homepage p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#banner-arrow {
+  margin-top: 200px;
+}
 
 
 .banner-kit {
   background-size: cover;
   padding: 150px 0;
   width: 100%;
-  height: 480px;
+  height: 300px;
   background-image: url('homepage-banner.jpg');
   background-position: center;
   background-size: cover;
