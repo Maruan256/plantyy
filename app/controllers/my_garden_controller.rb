@@ -16,4 +16,13 @@ class MyGardenController < ApplicationController
     end
     redirect_to my_garden_path(@my_garden)
   end
+
+  def update
+    @my_garden = MyGarden.find(params[:id])
+    @garden_kit = GardenKit.find(params[:kit_id])
+    @garden_kit.kit_plants.each do |kit_plant|
+      @my_plant = MyPlant.create(plant: kit_plant.plant, my_garden: @my_garden)
+    end
+    redirect_to my_garden_path(@my_garden)
+  end
 end

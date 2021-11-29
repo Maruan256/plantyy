@@ -3,6 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :my_gardens
-  has_many :garden_kits, through: :my_gardens
+  has_one :my_garden, dependent: :destroy
+  has_many :garden_kits, through: :my_garden
 end
