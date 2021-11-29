@@ -10,20 +10,22 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title" id="addkitModalLabel">Kit Added</h2>
+            <h2 class="modal-title" id="addkitModalLabel">Kit ordered</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-           <h2>This kit has been added to your garden!</h2>
+           <p id="pop-up">We are now sending you everything you need right to you doorstep!
+           Until then, you can find all the awesome plants you just purchased
+           in your personal garden as a preview!</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-flat" data-dismiss="modal">
                 <% if MyGarden.find_by(user_id: current_user.id).present? %>
-                <%= link_to "Go to my garden", my_garden_path(current_user.my_garden, kit_id: @garden_kit), method: :PATCH%>
+                <%= link_to "GO TO MY GARDEN", my_garden_path(current_user.my_garden, kit_id: @garden_kit), method: :PATCH%>
                 <% else %>
-                <%= link_to "Go to my garden", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
+                <%= link_to "GO TO MY GARDEN", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
                 <% end %>
             </button>
           </div>
