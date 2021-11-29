@@ -12,8 +12,14 @@
   </div>
 
   <div>
-    <%= link_to root_path class: "navbar-icon" do %>
-      <i class="fas fa-seedling"></i>
+    <% if (current_user == nil) %>
+      <%= link_to new_user_session_path, class: "navbar-icon" do %>
+        <i class="fas fa-seedling"></i>
+      <% end %>
+    <% else %>
+      <%= link_to my_garden_path(current_user.my_garden), class: "navbar-icon" do %>
+        <i class="fas fa-seedling"></i>
+      <% end %>
     <% end %>
   </div>
 

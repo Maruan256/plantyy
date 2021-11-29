@@ -19,6 +19,9 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <% if (@my_garden.my_plants.count === 0) %>
+        <p>No plants added in your garden yet</p>
+      <% else %>
       <div class="link">
           <% @my_garden.my_plants.each do |my_plant| %>
             <%= link_to plant_path(my_plant.plant.id) do %>
@@ -26,12 +29,13 @@
               <img src="<%= my_plant.plant.plant_url %>" />
               <div class="card-plant-infos">
                 <h2><%= my_plant.plant.name %></h2>
-                <p><%= my_plant.plant.description.split(".").first %></p>
+                <p><%= my_plant.plant.description.split(".").first %>.</p>
               </div>
             </div>
             <% end %>
           <% end %>
       </div>
+      <% end %>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="link">
@@ -41,7 +45,7 @@
               <img src="<%= my_plant.plant.plant_url %>" />
               <div class="card-plant-infos">
                 <h2><%= my_plant.plant.name %></h2>
-                <p><%= my_plant.plant.description.split(".").first %></p>
+                <p><%= my_plant.plant.description.split(".").first %>.</p>
               </div>
             </div>
             <% end %>
@@ -56,7 +60,7 @@
               <img src="<%= my_plant.plant.plant_url %>" />
               <div class="card-plant-infos">
                 <h2><%= my_plant.plant.name %></h2>
-                <p><%= my_plant.plant.description.split(".").first %></p>
+                <p><%= my_plant.plant.description.split(".").first %>.</p>
               </div>
             </div>
             <% end %>
