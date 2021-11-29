@@ -1,12 +1,15 @@
 
 <div class= "main text-center">
-  <div class = "banner-kit d-flex flex-column justify-content-center align-items-center ">
+  <div class = "banner-homepage d-flex flex-column justify-content-center align-items-center ">
     <h1 style="">PLANTYY</h1>
     <br>
     <%=link_to "Get Started", garden_kits_path, class: "btn-flat"%>
-    <%= link_to "#how-it-works" do %>
-      <%= image_tag ("go-down-button.png"), class: "go-down-button" %>
-    <% end  %>
+    <div id='banner-arrow'>
+      <p>See how it works 🐝</p>
+      <%= link_to "#how-it-works" do %>
+        <%= image_tag ("go-down-button.png"), class: "go-down-button" %>
+      <% end  %>
+    </div>
   </div>
   <div class="icon-container">
     <div class="homepage-icon">
