@@ -20,7 +20,11 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-flat" data-dismiss="modal">
-              <%= link_to "Go to my garden", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
+                <% if MyGarden.find_by(user_id: current_user.id).present? %>
+                <%= link_to "Go to my garden", my_garden_path(current_user.my_garden, kit_id: @garden_kit), method: :PATCH%>
+                <% else %>
+                <%= link_to "Go to my garden", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
+                <% end %>
             </button>
           </div>
         </div>
