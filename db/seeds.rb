@@ -83,43 +83,55 @@ puts 'Creating garden kits...'
 
 GardenKit.create!(
   kit_name: "English Garden",
+  price: "50",
   plants: [Plant.first],
   my_garden: garden_one,
+  description: "Want a cuppa tea? This garden will make you feel like a queen👑",
   kit_url: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 )
 
 GardenKit.create!(
   kit_name: "French Garden",
+  price: "39.99",
   plants: [Plant.last],
   my_garden: garden_two,
+  description: "Plant this kit, you won't need that flight ticket to see Versailles anymore!🥖",
   kit_url: "https://images.unsplash.com/photo-1580600301354-0ce8faef576c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 )
 
 GardenKit.create!(
   kit_name: "Cozy Garden",
+  price: "49.99",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_two,
+  description: "Do you want to make your place feel more like home? This kit is made for you🏠",
   kit_url: "https://images.unsplash.com/photo-1511671090499-b715092e944f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y296eSUyMGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
 )
 
 GardenKit.create!(
   kit_name: "Tropical Garden",
+  price: "60",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_one,
+  description: "We all know how the winter could be, let's pretend we are in a tropical country by planting this kit🌴",
   kit_url: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJvcGljYWwlMjBnYXJkZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
 )
 
 GardenKit.create!(
   kit_name: "Fresh Garden",
+  price: "50",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_one,
+  description: "Are you a fan of frech herbs and smell? Buy this kit to get all the herbs from your own garden🍅",
   kit_url: "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnJlc2glMjBnYXJkZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
 )
 
 GardenKit.create!(
   kit_name: "Classic Garden",
+  price: "29.99",
   plants: [Plant.all.sample, Plant.all.sample, Plant.all.sample],
   my_garden: garden_two,
+  description: "You don't know what you want yet? Get this classic garden kit as a start 😉",
   kit_url: "https://images.unsplash.com/photo-1470755008296-2939845775eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
 )
 
