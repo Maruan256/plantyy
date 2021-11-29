@@ -9,6 +9,6 @@ export default class extends Controller {
     console.log(this.listTarget);
   }
   update(event) {
-    console.log(event);
+    console.log(this.inputTarget.value);
   }
 }
