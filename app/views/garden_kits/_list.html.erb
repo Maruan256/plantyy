@@ -3,7 +3,7 @@
     <% if params[:query].blank? %>
       <%= pluralize garden_kits.count, 'garden kit' %> available
     <% else %>
-      <%= pluralize garden_kits.count, 'result' %> for <code><%= params[:query] %></code>
+      <%= pluralize garden_kits.count, 'result' %> for "<%= params[:query] %>"
     <% end %>
   </p>
   <div class="d-flex justify-content-center flex-wrap">

@@ -22,8 +22,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-flat" data-dismiss="modal">
-                <% if MyGarden.find_by(user_id: current_user.id).present? %>
-                <%= link_to "GO TO MY GARDEN", my_garden_path(current_user.my_garden, kit_id: @garden_kit), method: :PATCH%>
+                <% if MyGarden.find_by(user_id: current_user.id).my_plants.present? %>
+                <%= link_to "GO TO MY GARDEN", my_garden_path(params[:id]), method: :PATCH%>
                 <% else %>
                 <%= link_to "GO TO MY GARDEN", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
                 <% end %>
@@ -33,10 +33,7 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <div class="link">
+   <div class="link">
     <% @plants.each do |plant| %>
       <%= link_to plant_path(plant.id) do %>
       <div class="card-plant">
