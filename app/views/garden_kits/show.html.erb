@@ -3,7 +3,35 @@
   <div class="container">
     <h1><%= @garden_kit.kit_name %></h1>
     <p>Welcome to <%= @garden_kit.kit_name %> kit!</p>
-    <%= link_to "Get this kit",  my_garden_index_path(kit_id: @garden_kit), method: :POST, class: "btn btn-flat" %>
+    <button class="btn btn-flat" data-toggle="modal" data-target="#addkitModal">Get this kit
+    </button>
+</div>
+  <div class="modal fade" id="addkitModal" tabindex="-1" role="dialog" aria-labelledby="addkitModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="addkitModalLabel">Kit ordered</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <div class="pop-up">We are now sending you everything you need right to you doorstep!
+           Until then, you can find all the awesome plants you just purchased
+           in your personal garden as a preview!</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-flat" data-dismiss="modal">
+                <% if MyGarden.find_by(user_id: current_user.id).present? %>
+                <%= link_to "GO TO MY GARDEN", my_garden_path(current_user.my_garden, kit_id: @garden_kit), method: :PATCH%>
+                <% else %>
+                <%= link_to "GO TO MY GARDEN", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
+                <% end %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -1,1 +1,133 @@
 // Specific CSS for your home-page
+.homepage-title {
+  h1 {
+    font-family: $headers-font;
+  }
+  h2 {
+    font-family: $my-font-robot;
+  }
+  h3 {
+    font-family: $my-font-robot;
+  }
+}
+
+
+#how-it-works {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.icon-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 16px;
+}
+
+.homepage-icon {
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+#step-4 {
+  margin-top: 140px;
+}
+
+.steps h3 {
+  font-size: 25px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+}
+
+.steps h4 {
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.steps p {
+  font-size: 16px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.steps-placeholder {
+  width: 50%;
+}
+
+.step-container-left{
+position: relative;
+margin-bottom: 20px;
+margin-top: 26px;
+height: fit-content;
+align-items: top;
+}
+
+.step-container-right{
+position: relative;
+margin-bottom: 20px;
+margin-top: 76px;
+overflow: hidden;
+height: 200px;
+align-items: top;
+}
+
+.text-leftside {
+ width: 50%;
+ padding-left: 18px;
+ text-align: left;
+}
+
+.text-rightside {
+ width: 50%;
+ padding: 10px;
+text-align: left;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+}
+
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }
+// .main {
+//   position:relative
+// }
+/* Group 1 */
+
+// position: absolute;
+// left: 0%;
+// right: 61.17%;
+// top: 16.52%;
+// bottom: 59.82%;
+
+
+
+// /* Vector 2 */
+
+// position: absolute;
+// left: 38.83%;
+// right: 26.12%;
+// top: 18.23%;
+// bottom: 59.72%;
+
+// background: #87B143;
+// transform: matrix(-1, -0.09, -0.09, 1, 0, 0);
+
+
+// /* Vector 3 */
+
+// position: absolute;
+// left: 1.39%;
+// right: 68.72%;
+// top: 23.63%;
+// bottom: 66.66%;
+
+// background: #AFE459;

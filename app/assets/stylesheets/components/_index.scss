@@ -3,9 +3,11 @@
 @import "avatar";
 @import "navbar";
 @import "img";
-
+@import "footer";
 @import "icon";
 
 @import "card";
 @import "banner";
 @import "button";
+a {text-decoration: none;
+font-family: $headers-font;}

@@ -1,0 +1,59 @@
+html {
+	scroll-behavior: smooth;
+}
+
+.main-content {
+  margin-bottom: 100px;
+}
+
+ul {
+  padding-left: 0;
+  color: $light-purple-grey;
+}
+
+.container {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+body {
+  background-color: $light-pink;
+}
+
+
+p {
+  color: $light-purple-grey;
+  font-family: $my-font-robot;
+}
+body {
+  background-color: $light-pink;
+  font-family: $my-font-robot;
+}
+
+.pop-up {
+  color: black;
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+
+.main-content {
+  margin-bottom: 80px;
+}
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+h2 {
+  font-family: $my-font-robot;
+}
+
+h3 {
+font-family: $my-font-robot;
+}
+.h3 {
+font-family: $my-font-robot;
+}
+a {
+text-decoration: none;
+font-family: $headers-font;
+}

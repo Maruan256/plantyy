@@ -1,10 +1,13 @@
 <%= link_to garden_kit_path(garden_kit.id) do %>
-<div class="card-kit">
+<div class="card-kit flex-fill">
   <img src="<%= garden_kit.kit_url %>" />
   <div class="card-kit-infos">
     <div>
-      <h2><%= garden_kit.kit_name %></h2>
-      <p>Short description here!</p>
+      <div class="d-flex justify-content-between" id="name-price-container">
+        <h2><%= garden_kit.kit_name %></h2>
+        <%= "#{garden_kit.price} €"%>
+      </div>
+      <p> <%= garden_kit.description%> </p>
       <p class="category">Categories: cat safe, sunny</p>
     </div>
   </div>
