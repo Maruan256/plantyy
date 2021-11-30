@@ -1,3 +1,6 @@
+<% if @my_plant == nil %>
+<%= "You don't have any plants yet, go back to shop!" %>
+<% else %>
 <div class="banner-kit" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden_photo.kit_url %>);">
   <div class="container">
     <h1>Hello, <%= current_user.first_name %>!</h1>
@@ -76,3 +79,4 @@
     </div>
   </div>
 </div>
+<% end %>
