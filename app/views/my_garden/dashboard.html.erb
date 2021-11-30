@@ -5,7 +5,7 @@
       <p>Welcome to your Garden.</p>
     </div>
       <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-large-bordered" %>
+      <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-large-dashboard" %>
       <% else %>
       <%= link_to "ADD NEW PHOTO",  edit_user_registration_path(current_user) %>
       <% end %>
