@@ -7,7 +7,7 @@
       <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-large-dashboard" %>
       <% else %>
-      <%= link_to "ADD NEW PHOTO",  edit_user_registration_path(current_user) %>
+        <%= link_to image_tag('add-new-photo.png', style: 'width:100px; height:100px'),  edit_user_registration_path(current_user), class:"avatar-add-new-photo"%>
       <% end %>
   </div>
 </div>
