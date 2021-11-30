@@ -1,6 +1,3 @@
-<% if @my_plants == nil %>
-<%= "You don't have any plants yet, go back to shop!" %>
-<% else %>
 <div class="dashboard">
   <div class="container">
     <h1>Hello, <%= current_user.first_name %>!</h1>
@@ -31,6 +28,7 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <% if (@my_garden.my_plants.count === 0) %>
         <p>No plants added in your garden yet</p>
+        <button class="btn btn-flat"><%= link_to "EXPLORE KITS", garden_kits_path%></button>
       <% else %>
       <div class="link">
           <% @my_garden.my_plants.each do |my_plant| %>
@@ -78,5 +76,3 @@
       </div>
     </div>
   </div>
-</div>
-<% end %>
