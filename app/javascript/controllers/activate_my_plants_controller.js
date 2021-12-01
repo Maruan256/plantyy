@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['infos', 'form', 'card'];
+  static targets = ['infos', 'form', 'card-plant'];
 
   connect() {
     console.log(this.infosTarget);

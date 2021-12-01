@@ -1,7 +1,7 @@
  <%= link_to plant_path(my_plant.plant.id) do %>
             <div class="card-plant" data-controller='activate-my-plants'>
               <img src="<%= my_plant.plant.plant_url %>" />
-              <div class="card-my-plant-infos" data-activate-my-plants-target='my-plant-infos'>
+              <div class="card-my-plant-infos" data-activate-my-plants-target='infos'>
                 <h2><%= my_plant.plant.name %></h2>
                 <p><%= my_plant.plant.description.split(".").first %>.</p>
                 <i class="fas fa-pen fa-xs ml-2" data-action="click->activate-my-plants#displayForm"></i>
