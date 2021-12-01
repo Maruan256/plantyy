@@ -29,4 +29,5 @@ class MyPlant < ApplicationRecord
       "All good, your plant is fine."
     end
   end
+
 end
