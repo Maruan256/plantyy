@@ -2,7 +2,6 @@ class MyPlant < ApplicationRecord
   belongs_to :plant
   belongs_to :my_garden
 
-
   def planted
     self.water_level = Time.now
     self.fertilizer_level = Time.now

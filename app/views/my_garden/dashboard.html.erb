@@ -32,13 +32,7 @@
       <div class="link">
           <% @my_garden.my_plants.each do |my_plant| %>
             <%= link_to plant_path(my_plant.plant.id) do %>
-            <div class="card-plant">
-              <img src="<%= my_plant.plant.plant_url %>" />
-              <div class="card-plant-infos">
-                <h2><%= my_plant.plant.name %></h2>
-                <button class="btn btn-primary">🚰Water this plant💧</button>
-              </div>
-            </div>
+            
             <% end %>
           <% end %>
       </div>
