@@ -19,11 +19,11 @@ body {
 
 p {
   color: $light-purple-grey;
-  font-family: $my-font-robot;
+  font-family: $body-font;
 }
 body {
   background-color: $light-pink;
-  font-family: $my-font-robot;
+  font-family: $body-font;
 }
 
 .pop-up {
@@ -37,14 +37,14 @@ a, a:hover, a:focus, a:active {
       color: inherit;
  }
 h2 {
-  font-family: $my-font-robot;
+  font-family: $body-font;
 }
 
 h3 {
-font-family: $my-font-robot;
+font-family: $body-font;
 }
 .h3 {
-font-family: $my-font-robot;
+font-family: $body-font;
 }
 a {
 text-decoration: none;
@@ -52,4 +52,9 @@ font-family: $headers-font;
 }
 h1 {
   font-size: 60px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.4;
 }
