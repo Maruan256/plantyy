@@ -23,7 +23,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-flat" data-dismiss="modal">
                 <% if MyGarden.find_by(user_id: current_user.id).my_plants.present? %>
-                <%= link_to "GO TO MY GARDEN", my_garden_path(params[:id]), method: :PATCH%>
+                <%= link_to "GO TO MY GARDEN", my_garden_path(@garden_kit), method: :PATCH%>
                 <% else %>
                 <%= link_to "GO TO MY GARDEN", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
                 <% end %>
@@ -46,21 +46,37 @@
       <% end %>
     <% end %>
   </div>
-  <h2>
-  <%= pluralize @garden_kit.reviews.size, "review" %>
-  </h2>
 
-  <div id="reviews">
-    <% if @garden_kit.my_garden != current_user %>
-        You need to purchase this kit to leave a review.
-    <% else %>
-      <% if @garden_kit.reviews.blank? %>
-        Be the first to leave a review for <%= @garden_kit.kit_name %>
-      <% else %>
-        <% @garden_kits.reviews.each do |review| %>
-          <p><%= review.content %></p>
+  <div class="container m-1">
+    <h2>
+      <%= pluralize @garden_kit.reviews.size, "review" %>
+    </h2>
+    <div id="reviews">
+        <% if @garden_kit.reviews.blank? %>
+          Be the first to leave a review for <%= @garden_kit.kit_name %>
+          <%= simple_form_for([ @garden_kit, @review ]) do |f| %>
+          <%= f.input :rating, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline%>
+          <%= f.input :content, :label => "Leave a review", as: :text %>
+          <div class="btn btn-submit"><%= f.button :submit, "submit" %></div>
+          <% end %>
+        <% else %>
+              <% @garden_kit.reviews.each do |review| %>
+              <div class="card-review">
+                <div>
+                  <% review.rating.to_i.times do  %>
+                  <i class="fas fa-star"></i>
+                    <% end %>
+                </div>
+                <%= "#{review.user.username} says:"%>
+                <p><%= review.content %></p>
+              </div>
+               <% end %>
+            <%= simple_form_for([ @garden_kit, @review ]) do |f| %>
+            <%= f.input :rating, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline%>
+            <%= f.input :content, :label => "Leave a review", as: :text %>
+            <div class="btn btn-submit"><%= f.button :submit, "submit" %></div>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
