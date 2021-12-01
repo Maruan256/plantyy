@@ -1,12 +1,12 @@
  <%= link_to plant_path(my_plant.plant.id) do %>
-            <div class="card-my-plant" data-controller='activate-my-plants'>
+            <div class="card-plant" data-controller='activate-my-plants'>
               <img src="<%= my_plant.plant.plant_url %>" />
               <div class="card-my-plant-infos" data-activate-my-plants-target='my-plant-infos'>
                 <h2><%= my_plant.plant.name %></h2>
                 <p><%= my_plant.plant.description.split(".").first %>.</p>
                 <i class="fas fa-pen fa-xs ml-2" data-action="click->activate-my-plants#displayForm"></i>
               </div>
-              <%= simple_form_for my_plants, html: { class: 'd-none', data: { activate_my_plants_target: 'form' } } do |f| %>
+              <%= simple_form_for my_plant, html: { class: 'd-none', data: { activate_my_plants_target: 'form' } } do |f| %>
                 <%= f.input :active  %>
                 <%= f.submit "Activate", class: "btn btn-sm btn-primary mt-2"  %>
                 <% end %>
