@@ -1,6 +1,7 @@
 class MyPlant < ApplicationRecord
   belongs_to :plant
   belongs_to :my_garden
+  before_create :planted
 
   def planted
     self.water_level = Time.now
@@ -22,11 +23,11 @@ class MyPlant < ApplicationRecord
 
   def check
     if Time.now - self.water_level >= self.plant.water.to_i
-      "all_good"
+      "all good, your plant is fine."
     elsif Time.now - self.water_level < self.plant.water.to_i && Time.now - self.water_level > 360000
-      "water_soon"
+      "you need to water your plant soon!"
     else
-      "water_now"
+      "Quick! Water! Your plant is dying!"
     end
   end
 end
