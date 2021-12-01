@@ -51,11 +51,15 @@
   </h2>
 
   <div id="reviews">
-    <% if @garden_kit.reviews.blank? %>
-      Be the first to leave a review for <%= @garden_kit.kit_name %>
+    <% if @garden_kit.my_garden != current_user %>
+        You need to purchase this kit to leave a review.
     <% else %>
-      <% @garden_kits.reviews.each do |review| %>
-        <p><%= review.content %></p>
+      <% if @garden_kit.reviews.blank? %>
+        Be the first to leave a review for <%= @garden_kit.kit_name %>
+      <% else %>
+        <% @garden_kits.reviews.each do |review| %>
+          <p><%= review.content %></p>
+        <% end %>
       <% end %>
     <% end %>
   </div>
