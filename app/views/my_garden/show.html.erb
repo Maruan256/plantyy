@@ -1,32 +1,43 @@
-<div class="dashboard">
+<div class="banner-kit" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden_photo.kit_url %>);">
   <div class="container">
-    <div>
-      <h1>Hello, <%= current_user.first_name %>!</h1>
-      <p>Welcome to your Garden.</p>
-    </div>
-      <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-large-dashboard" %>
-      <% else %>
-        <%= link_to image_tag('add-new-photo.png', style: 'width:100px; height:100px'),  edit_user_registration_path(current_user), class:"avatar-add-new-photo"%>
-      <% end %>
+    <h1>Hello, <%= @my_garden.user.first_name %>!</h1>
+    <p>Welcome to your Garden.</p>
   </div>
 </div>
 
 <div class="h5 my-3">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My plantyys</a>
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Plants</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Water</a>
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">TODOs</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Fertilizer</a>
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Tips</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <%= render 'my_plants_list', my_plants: @my_plants %>
+      <% if (@my_garden.my_plants.count === 0) %>
+        <p>No plants added in your garden yet</p>
+      <% else %>
+      <div class="link">
+          <% @my_garden.my_plants.each do |my_plant| %>
+            <%= link_to plant_path(my_plant.plant.id) do %>
+            <div class="card-plant">
+              <img src="<%= my_plant.plant.plant_url %>" />
+              <div class="card-plant-infos">
+                <h2><%= my_plant.plant.name %></h2>
+                <p><%= my_plant.plant.description.split(".").first %>.</p>
+              </div>
+               <%= simple_form_for my_plant, html: { class: 'd-none', data: {
+                 edit_movie_target: 'form' } } do |f| %>
+            </div>
+            <% end %>
+          <% end %>
+      </div>
+      <% end %>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="link">
@@ -59,3 +70,4 @@
       </div>
     </div>
   </div>
+</div>

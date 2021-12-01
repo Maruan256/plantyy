@@ -1,0 +1,13 @@
+ <%= link_to plant_path(my_plant.plant.id) do %>
+            <div class="card-plant">
+              <img src="<%= my_plant.plant.plant_url %>" />
+              <div class="card-plant-infos">
+                <h2><%= my_plant.plant.name %></h2>
+                <p><%= my_plant.plant.description.split(".").first %>.</p>
+              </div>
+              <%= simple_form_for my_plant, html: { class: 'd-none', data: { edit_my_plant_target: 'form' } } do |f| %>
+                <%= f.input :active  %>
+                <%= f.submit "Activate", class: "btn btn-sm btn-primary mt-2"  %>
+              <%= end %>
+            </div>
+          <% end %>
