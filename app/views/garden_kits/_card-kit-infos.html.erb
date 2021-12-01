@@ -9,6 +9,9 @@
       </div>
       <p> <%= garden_kit.description%> </p>
       <p class="category">Categories: cat safe, sunny</p>
+        <% garden_kit.reviews.each do |review| %>
+        <% @ratings = review.rating %>
+        <% end %>
     </div>
   </div>
 </div>
