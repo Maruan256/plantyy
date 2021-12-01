@@ -46,4 +46,17 @@
       <% end %>
     <% end %>
   </div>
+  <h2>
+  <%= pluralize @garden_kit.reviews.size, "review" %>
+  </h2>
+
+  <div id="reviews">
+    <% if @garden_kit.reviews.blank? %>
+      Be the first to leave a review for <%= @garden_kit.kit_name %>
+    <% else %>
+      <% @garden_kits.reviews.each do |review| %>
+        <p><%= review.content %></p>
+      <% end %>
+    <% end %>
+  </div>
 </div>

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#home'
   resources :users, only: [:show]
-  resources :garden_kits, only: [:show, :index]
+  resources :garden_kits, only: [:show, :index] do
+    resources :reviews, only: :create
+  end
   resources :plants, only: [:show]
   resources :my_garden, only: [ :create, :update] do
     resources :my_plants, only: [:show, :create, :update]
