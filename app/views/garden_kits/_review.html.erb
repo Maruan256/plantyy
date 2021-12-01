@@ -1,0 +1,9 @@
+ <div class="card-review", id="review-<%= review.id%>">
+                  <div>
+                    <% review.rating.to_i.times do  %>
+                    <i class="fas fa-star"></i>
+                      <% end %>
+                  </div>
+                  <%= "#{review.user.username} says:"%>
+                 <p><%= review.content %></p>
+                </div>
