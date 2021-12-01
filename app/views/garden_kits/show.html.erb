@@ -51,32 +51,18 @@
     <h2>
       <%= pluralize @garden_kit.reviews.size, "review" %>
     </h2>
-    <div id="reviews">
-        <% if @garden_kit.reviews.blank? %>
-          Be the first to leave a review for <%= @garden_kit.kit_name %>
-          <%= simple_form_for([ @garden_kit, @review ]) do |f| %>
-          <%= f.input :rating, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline%>
-          <%= f.input :content, :label => "Leave a review", as: :text %>
-          <div class="btn btn-submit"><%= f.button :submit, "submit" %></div>
+    <div data-controller="insert-in-list">
+      <div id="reviews" data-insert-in-list-target="items">
+          <% if @garden_kit.reviews.blank? %>
+            Be the first to leave a review for <%= @garden_kit.kit_name %>
+            <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
+          <% else %>
+            <% @garden_kit.reviews.each do |review| %>
+            <%= render 'review', review: review %>
+            <% end %>
+      </div>
+            <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
           <% end %>
-        <% else %>
-              <% @garden_kit.reviews.each do |review| %>
-              <div class="card-review">
-                <div>
-                  <% review.rating.to_i.times do  %>
-                  <i class="fas fa-star"></i>
-                    <% end %>
-                </div>
-                <%= "#{review.user.username} says:"%>
-                <p><%= review.content %></p>
-              </div>
-               <% end %>
-            <%= simple_form_for([ @garden_kit, @review ]) do |f| %>
-            <%= f.input :rating, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline%>
-            <%= f.input :content, :label => "Leave a review", as: :text %>
-            <div class="btn btn-submit"><%= f.button :submit, "submit" %></div>
-          <% end %>
-        <% end %>
     </div>
   </div>
 </div>
