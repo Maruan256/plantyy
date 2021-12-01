@@ -9,9 +9,16 @@
       </div>
       <p> <%= garden_kit.description%> </p>
       <p class="category">Categories: cat safe, sunny</p>
+        <% @sum = 0 %>
+        <% @array = [] %>
         <% garden_kit.reviews.each do |review| %>
-        <% @ratings = review.rating %>
+        <% @rating = review.rating %>
+        <% @array << @rating %>
+        <%  @sum += @rating %>
         <% end %>
+        <% total = @array.size %>
+        <% sum = @sum %>
+        <%= "#{sum/total.to_f}" %>
     </div>
   </div>
 </div>
