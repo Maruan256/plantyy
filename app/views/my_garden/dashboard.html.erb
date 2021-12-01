@@ -31,13 +31,22 @@
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="link">
           <% @my_garden.my_plants.each do |my_plant| %>
-            <%= link_to my_plant_path(my_plant.plant.id) do %>
+            <%= link_to plant_path(my_plant.plant.id) do %>
             <div class="card-plant">
-              <img src="<%= my_plant.plant.plant_url %>" />
-              <div class="card-plant-infos">
-                <h2><%= my_plant.plant.name %></h2>
-                <p><%= my_plant.plant.description.split(".").first %>.</p>
-              </div>
+              <% if (my_plant.check == "Quick! Water! Your plant is dying!") %>
+                <img src="<%= my_plant.plant.plant_url %>" />
+                <div class="card-plant-infos">
+                  <h2><%= my_plant.plant.name %></h2>
+                  <p><%= my_plant.check %></p>
+                  <button class="btn btn-primary">🚰Water this plant💧</button>
+                </div>
+              <% else %>
+                <img src="<%= my_plant.plant.plant_url %>" />
+                <div class="card-plant-infos">
+                  <h2><%= my_plant.plant.name %></h2>
+                  <p><%= my_plant.check %></p>
+                </div>
+              <% end %>
             </div>
             <% end %>
           <% end %>
@@ -46,7 +55,7 @@
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
       <div class="link">
           <% @my_garden.my_plants.each do |my_plant| %>
-            <%= link_to my_plant_path(my_plant.plant.id) do %>
+            <%= link_to plant_path(my_plant.plant.id) do %>
             <div class="card-plant">
               <img src="<%= my_plant.plant.plant_url %>" />
               <div class="card-plant-infos">
