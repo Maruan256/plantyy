@@ -80,6 +80,7 @@ user_one = User.create!(
   email: "yian80413@gmail.com",
   address: "Berlin 1",
   password: "123456"
+  
 )
 
 user_two = User.create!(
