@@ -53,16 +53,19 @@
     </h2>
     <div data-controller="insert-in-list">
       <div id="reviews" data-insert-in-list-target="items">
-          <% if @garden_kit.reviews.blank? %>
-            Be the first to leave a review for <%= @garden_kit.kit_name %>
-            <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
-          <% else %>
-            <% @garden_kit.reviews.each do |review| %>
-            <%= render 'review', review: review %>
-            <% end %>
+        <% @garden_kit.reviews.each do |review| %>
+        <%= render 'review', review: review %>
+        <% end %>
       </div>
-            <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
-          <% end %>
+      <div class="form">
+        <% if @garden_kit.reviews.blank? %>
+          <h4 data-insert-in-list-target="review">
+            Be the first to leave a review for <%= @garden_kit.kit_name %>
+          </h4>
+        <% end %>
+        <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
+
+        </div>
     </div>
   </div>
 </div>
