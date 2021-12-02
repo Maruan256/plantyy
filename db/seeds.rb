@@ -63,7 +63,7 @@ puts plants_hashes
 puts "Creating plants."
 
 plants_hashes.each do |elem|
-  Plant.create(name: elem[:name], description: elem[:description], plant_url: elem[:plant_url], sunlight: ["1", "3", "8"].sample, water: ["3", "1", "8"].sample, cat: ["toxic", "non-toxic"].sample)
+  Plant.create(name: elem[:name], description: elem[:description], plant_url: elem[:plant_url], sunlight: ["1", "3", "8"].sample, water: ["3", "4", "6"].sample, cat: ["toxic", "non-toxic"].sample)
 end
 
 puts "#{Plant.count} plants created."

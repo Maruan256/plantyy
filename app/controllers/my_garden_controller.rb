@@ -3,6 +3,7 @@ class MyGardenController < ApplicationController
     @my_garden = current_user.my_garden
     @my_plants = @my_garden.my_plants
     @garden_photo = GardenKit.where(my_garden_id: current_user.id).first
+
   end
 
   def create
@@ -20,5 +21,12 @@ class MyGardenController < ApplicationController
       @my_plant = MyPlant.create(plant: kit_plant.plant, my_garden: @my_garden)
     end
     redirect_to user_garden_path
+  end
+
+  def watered
+    @my_plant = MyPlant.find(params[:id])
+    @my_plant.water_level = Time.now.yday
+    @my_plant.save
+    redirect_to user_garden_path(tab: :water)
   end
 end
