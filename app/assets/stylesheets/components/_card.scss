@@ -126,6 +126,22 @@
   font-weight: bold;
 }
 
+.card-review {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 90%;
+  min-height: 50px;
+  margin: 10px;
+  display: block;
+  font-family: $body-font;
+  border-radius: 5px;
+
+
+  padding: 10px;
+
+}
+
 #name-price-container{
  width: 217px;
  vertical-align: top;

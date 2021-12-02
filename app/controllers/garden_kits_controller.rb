@@ -14,6 +14,11 @@ class GardenKitsController < ApplicationController
 
   def show
     @garden_kit = GardenKit.find(params[:id])
+    # if @garden_kit == nil
+    #   @garden_kit = GardenKit.find(params[:garden_kit_id])
+    # end
     @plants = @garden_kit.plants
+    @review = Review.new
   end
+
 end

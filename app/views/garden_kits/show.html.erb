@@ -16,16 +16,16 @@
             </button>
           </div>
           <div class="modal-body">
-           <div class="pop-up">We are now sending you everything you need right to you doorstep!
+           <div class="pop-up">Everything !
            Until then, you can find all the awesome plants you just purchased
            in your personal garden as a preview!</div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-flat" data-dismiss="modal">
                 <% if MyGarden.find_by(user_id: current_user.id).my_plants.present? %>
-                <%= link_to "GO TO MY GARDEN", my_garden_path(params[:id]), method: :PATCH%>
+                <%= link_to "Got to my Garden!", my_garden_path(@garden_kit), method: :PATCH%>
                 <% else %>
-                <%= link_to "GO TO MY GARDEN", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
+                <%= link_to "Got to my Garden!", my_garden_index_path(kit_id: @garden_kit), method: :POST %>
                 <% end %>
             </button>
           </div>
@@ -45,5 +45,27 @@
       </div>
       <% end %>
     <% end %>
+  </div>
+
+  <div class="container m-1">
+  <div data-controller="insert-in-list">
+   <h2 data-insert-in-list-target="total">
+      <%= pluralize @garden_kit.reviews.size, "review" %>
+  </h2>
+      <div id="reviews" data-insert-in-list-target="items">
+        <% @garden_kit.reviews.each do |review| %>
+        <%= render 'review', review: review %>
+        <% end %>
+      </div>
+      <div class="form">
+        <% if @garden_kit.reviews.blank? %>
+          <h4 data-insert-in-list-target="firstreview">
+            Be the first to leave a review for <%= @garden_kit.kit_name %>
+          </h4>
+        <% end %>
+        <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
+
+        </div>
+    </div>
   </div>
 </div>
