@@ -22,6 +22,14 @@ padding-top: 100px;
 }
 
 
+.toggled-button {
+  border: none;
+  background-color: unset;
+  i {
+    color: $special-orange;
+  }
+
+
 .btn-primary {
   border-radius: 23px;
   color: white;

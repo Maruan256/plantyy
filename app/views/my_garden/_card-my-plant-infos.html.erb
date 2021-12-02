@@ -1,14 +1,22 @@
- <%= link_to plant_path(my_plant.plant.id) do %>
-            <div class="card-plant" data-controller='activate-my-plants'>
-              <img src="<%= my_plant.plant.plant_url %>" />
-              <div class="card-my-plant-infos" data-activate-my-plants-target='infos'>
-                <h2><%= my_plant.plant.name %></h2>
-                <p><%= my_plant.plant.description.split(".").first %>.</p>
-                <i class="fas fa-pen fa-xs ml-2" data-action="click->activate-my-plants#displayForm"></i>
-              </div>
-              <%= simple_form_for my_plant, html: { class: 'd-none', data: { activate_my_plants_target: 'form' } } do |f| %>
-                <%= f.input :active  %>
-                <%= f.submit "Activate", class: "btn btn-sm btn-primary mt-2"  %>
-                <% end %>
-            </div>
+<div class="card-plant" data-controller='activate-my-plants' data-activate-my-plants-target='card'>
+  <%= link_to plant_path(my_plant.plant.id) do %>
+  <img src="<%= my_plant.plant.plant_url %>" />
+  <% end %>
+  <div class="card-my-plant-infos" data-activate-my-plants-target='infos'>
+    <h2><%= my_plant.plant.name %></h2>
+    <p><%= my_plant.plant.description.split(/[.?!]/).first %>.</p>
+    <%# <i class="fas fa-calendar-check fa-xs ml-2" data-action="click->activate-my-plants#displayForm"></i> %>
+  <%# </div>
+  <div> %>
+    <%= simple_form_for my_plant, remote: true,html: {class: '', data: { activate_my_plants_target: 'form', action: 'submit->activate_my_plants#update' } } do |f| %>
+      <%= f.hidden_field :active  %>
+      <%= button_tag type: 'submit', class: "toggled-button" do %>
+        <% if my_plant.active %>
+        <i class="fas fa-toggle-on fa-xs ml-2" aria-hidden="true"></i>
+        <% else %>
+        <i class="fas fa-toggle-off fa-xs ml-2" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
     <% end %>
+  </div>
+</div>
