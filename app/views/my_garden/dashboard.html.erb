@@ -7,7 +7,7 @@
       <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-large-dashboard" %>
       <% else %>
-        <%= link_to image_tag('maruan_profile.jpeg', class: "avatar-large-dashboard"), edit_user_registration_path(current_user)%>
+        <img src="https://res.cloudinary.com/yian80413/image/upload/v1638457869/maruan_profile_wtr85w.jpg" alt="" class="avatar-large-dashboard">
       <% end %>
   </div>
 </div>
