@@ -1,6 +1,6 @@
 class MyPlantsController < ApplicationController
   def show
-    @my_plant = MyPlant.find(:id)
+    @my_plant = MyPlant.find(params[:id])
   end
 
   def create

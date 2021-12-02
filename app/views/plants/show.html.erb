@@ -6,29 +6,29 @@
 </div>
 
 <div class="container">
-  <p><%= @plant.description %></p>
+  <p class="description"><%= @plant.description %></p>
   <ul>
-    <li><i class="fas fa-tint"></i>
-        <% if @plant.water == "high" %>
+    <li style="text-align:center"><i class="fas fa-tint"></i>
+        <% if @plant.water == "86400" %>
           <%= "Needs a lot of water" %>
-        <% elsif @plant.water == "medium" %>
+        <% elsif @plant.water == "259200" %>
           <%= "Needs moderate amount of water " %>
         <% else %>
           <%= "Doesn't need a lot of water" %>
         <% end %>
     </li>
 
-    <li><i class="fas fa-sun"></i>
-      <% if @plant.sunlight == "high" %>
+    <li style="text-align:center"><i class="fas fa-sun"></i>
+      <% if @plant.sunlight == "86400" %>
         <%= "Needs a lot of sunshine" %>
-      <% elsif @plant.sunlight == "medium" %>
+      <% elsif @plant.sunlight == "259200" %>
         <%= "Needs moderate amount of sunshine " %>
       <% else %>
         <%= "Doesn't need a lot of sunshine" %>
       <% end %>
     </li>
 
-    <li><i class="fas fa-cat"></i>
+    <li style="text-align:center"><i class="fas fa-cat"></i>
       <% if @plant.cat == "toxic" %>
         <%= "Toxic to cat" %>
       <% else %>

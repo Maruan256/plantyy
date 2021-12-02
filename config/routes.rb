@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :my_garden, only: [ :create, :update] do
     resources :my_plants, only: [:show, :create]
   end
-  resources :my_plants, only: [:update]
+  resources :my_plants, only: [:update, :show]
   get "user_garden", to: "my_garden#dashboard"
   # user_garden is the name of the route, my_garden is the name of controller, dashboard is the method
   # this line means you need a "dashboard" method in my_garden method
