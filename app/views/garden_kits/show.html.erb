@@ -52,7 +52,7 @@
       <%= pluralize @garden_kit.reviews.size, "review" %>
     </h2>
     <div data-controller="insert-in-list">
-      <div id="reviews" data-insert-in-list-target="items">
+      <div id="reviews" data-insert-in-list-target="items2">
           <% if @garden_kit.reviews.blank? %>
             Be the first to leave a review for <%= @garden_kit.kit_name %>
             <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
