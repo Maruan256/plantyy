@@ -1,0 +1,12 @@
+<div data-activate-my-plants-target="my_plants_list">
+  <% if (@my_garden.my_plants.count === 0) %>
+        <p>No plants added in your garden yet</p>
+        <button class="btn btn-flat"><%= link_to "EXPLORE KITS", garden_kits_path%></button>
+      <% else %>
+      <div class="link">
+          <% @my_garden.my_plants.each do |my_plant| %>
+          <%= render 'card-my-plant-infos.html', my_plant: my_plant %>
+          <% end %>
+      </div>
+      <% end %>
+</div>

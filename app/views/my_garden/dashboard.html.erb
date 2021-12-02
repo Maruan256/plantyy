@@ -15,46 +15,38 @@
 <div class="h5 my-3">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">TODOs</a>
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My plantyys</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Garden</a>
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Water</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Tips</a>
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Fertilizer</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <% if (@my_garden.my_plants.count === 0) %>
-        <p>No plants added in your garden yet</p>
-        <button class="btn btn-flat"><%= link_to "EXPLORE KITS", garden_kits_path%></button>
-      <% else %>
-      <div class="link">
-          <% @my_garden.my_plants.each do |my_plant| %>
-            <%= link_to plant_path(my_plant.plant.id) do %>
-            <div class="card-plant">
-              <img src="<%= my_plant.plant.plant_url %>" />
-              <div class="card-plant-infos">
-                <h2><%= my_plant.plant.name %></h2>
-                <p><%= my_plant.plant.description.split(".").first %>.</p>
-              </div>
-            </div>
-            <% end %>
-          <% end %>
-      </div>
-      <% end %>
+      <%= render 'my_plants_list', my_plants: @my_plants %>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="link">
           <% @my_garden.my_plants.each do |my_plant| %>
             <%= link_to plant_path(my_plant.plant.id) do %>
             <div class="card-plant">
-              <img src="<%= my_plant.plant.plant_url %>" />
-              <div class="card-plant-infos">
-                <h2><%= my_plant.plant.name %></h2>
-                <p><%= my_plant.plant.description.split(".").first %>.</p>
-              </div>
+              <% if (my_plant.check == "Quick! Water! Your plant is dying!") %>
+                <img src="<%= my_plant.plant.plant_url %>" />
+                <div class="card-plant-infos">
+                  <h2><%= my_plant.plant.name %></h2>
+                  <p><%= my_plant.check %></p>
+                  <button class="btn btn-primary">🚰Water this plant💧</button>
+                </div>
+              <% else %>
+                <img src="<%= my_plant.plant.plant_url %>" />
+                <div class="card-plant-infos">
+                  <h2><%= my_plant.plant.name %></h2>
+                  <p><%= my_plant.check %></p>
+                </div>
+              <% end %>
             </div>
             <% end %>
           <% end %>
