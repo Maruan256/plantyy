@@ -37,6 +37,7 @@ padding-top: 100px;
 .toggled-button {
   border: none;
   background-color: unset;
+  margin-top: 5px;
   i {
     color: $special-orange;
   }
@@ -53,4 +54,8 @@ padding-top: 100px;
   box-shadow: 2px 2px 3px gray;
   font-size: 18px;
   margin-top: 5px;
+}
+
+.btn {
+  color: white;
 }

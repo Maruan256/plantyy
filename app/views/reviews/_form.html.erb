@@ -1,8 +1,10 @@
+<div class="form">
 
 <%= simple_form_for([ garden_kit, review ],
-                                data: { insert_in_list_target: "form",
+                                data: { insert_in_list_target: "form2",
                                  action: 'submit->insert-in-list#send' }) do |f| %>
               <%= f.input :rating, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline%>
               <%= f.input :content, :label => "Leave a review", as: :text %>
               <div class="btn btn-submit"><%= f.button :submit, "submit" %></div>
             <% end %>
+</div>

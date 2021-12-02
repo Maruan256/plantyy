@@ -40,7 +40,7 @@
         <img src="<%= plant.plant_url %>" />
         <div class="card-plant-infos">
           <h2><%= plant.name %></h2>
-          <p><%= plant.description.split(".").first%>.</p>
+          <p><%= plant.description.truncate(67)%>.</p>
         </div>
       </div>
       <% end %>
@@ -52,7 +52,7 @@
    <h2 data-insert-in-list-target="total">
       <%= pluralize @garden_kit.reviews.size, "review" %>
   </h2>
-      <div id="reviews" data-insert-in-list-target="items">
+      <div id="reviews" data-insert-in-list-target="items2">
         <% @garden_kit.reviews.each do |review| %>
         <%= render 'review', review: review %>
         <% end %>
