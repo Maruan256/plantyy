@@ -2,21 +2,27 @@ import { Controller } from "stimulus";
 import { csrfToken } from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ['items', 'form'];
+  static targets = ['items2', 'form2', 'firstreview', 'total'];
+
   send(event) {
     event.preventDefault();
+    console.log('whatever2');
 
-    fetch(this.formTarget.action, {
+    fetch(this.form2Target.action, {
       method: 'POST',
       headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-      body: new FormData(this.formTarget)
+      body: new FormData(this.form2Target)
     })
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
-          this.itemsTarget.insertAdjacentHTML('beforeend', data.inserted_item);
+          this.items2Target.insertAdjacentHTML('beforeend', data.inserted_item);
         }
-        this.formTarget.outerHTML = data.form;
+
+        this.form2Target.outerHTML = data.form;
+        this.totalTarget.innerText = (Number(this.totalTarget.innerText[0]) + 1) + " reviews"
+        this.firstreviewTarget.classList.add('invisible');
+
       });
-      }
   }
+}

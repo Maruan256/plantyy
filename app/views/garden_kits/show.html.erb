@@ -16,7 +16,7 @@
             </button>
           </div>
           <div class="modal-body">
-           <div class="pop-up">We are now sending you everything you need right to you doorstep!
+           <div class="pop-up">Everything !
            Until then, you can find all the awesome plants you just purchased
            in your personal garden as a preview!</div>
           </div>
@@ -40,7 +40,7 @@
         <img src="<%= plant.plant_url %>" />
         <div class="card-plant-infos">
           <h2><%= plant.name %></h2>
-          <p><%= plant.description.split(".").first%>.</p>
+          <p><%= plant.description.truncate(67)%>.</p>
         </div>
       </div>
       <% end %>
@@ -48,21 +48,24 @@
   </div>
 
   <div class="container m-1">
-    <h2>
+  <div data-controller="insert-in-list">
+   <h2 data-insert-in-list-target="total">
       <%= pluralize @garden_kit.reviews.size, "review" %>
-    </h2>
-    <div data-controller="insert-in-list">
-      <div id="reviews" data-insert-in-list-target="items">
-          <% if @garden_kit.reviews.blank? %>
-            Be the first to leave a review for <%= @garden_kit.kit_name %>
-            <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
-          <% else %>
-            <% @garden_kit.reviews.each do |review| %>
-            <%= render 'review', review: review %>
-            <% end %>
+  </h2>
+      <div id="reviews" data-insert-in-list-target="items2">
+        <% @garden_kit.reviews.each do |review| %>
+        <%= render 'review', review: review %>
+        <% end %>
       </div>
-            <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
-          <% end %>
+      <div class="form">
+        <% if @garden_kit.reviews.blank? %>
+          <h4 data-insert-in-list-target="firstreview">
+            Be the first to leave a review for <%= @garden_kit.kit_name %>
+          </h4>
+        <% end %>
+        <%= render 'reviews/form', garden_kit: @garden_kit, review: @review %>
+
+        </div>
     </div>
   </div>
 </div>
