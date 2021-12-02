@@ -1,0 +1,27 @@
+1. introduce myself, my problem
+2. explain how Plantyy solves my problem
+3. remark how everything is explained, step by step
+4. but than say that we could go step by step together
+5. Akiho pushes the "get started" button
+6. remark on the beatiful gardens
+7. Akiho klicks on a garden kit
+8. Say: "So, a garden kit consists of a lot of single plants. These are beatiful, I think I want to buy this kit"
+9. Akiho goes back to to the garden-kit index page and clicks on purchase.
+10. remark on the popup (maybe read it out)
+11. akiho clicks on "go to my garden"
+12. Say: "Now I wait for the plants to arrive"
+12a. "While we are waiting: Why not leave a comment on a kit?"
+12b. Akiho goes to the kit we just purchased and scrolls to the comment function
+12c. "Lets write "Awesome Plantyys you have there""
+12d. Akiho writes simultaniasly "Awesome Plantyys you have there" and leaves the comment
+13. (maybe someone could hand me some plants, dressed as a DHL guy)
+14. "Oh look, my Plantyys arrived!
+15. "Now that I recieved my Plants, I need to activate them in my Digital Garden!"
+16. Akiho activates all plants
+17. "Lets check if they do need some water"
+18. Akiho goes to my garden and clicks on the Water Tap
+19. "Ah, look, some of my Plants need Water."
+20. I water the plants on stage
+21. time to update the app
+22. Akiho clicks the watering can
+23. "well, that seemed like a lot, thank you all for listening"
