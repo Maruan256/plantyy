@@ -9,6 +9,23 @@
       </div>
       <p> <%= garden_kit.description%> </p>
       <p class="category">Categories: cat safe, sunny</p>
+       <div>
+        <% if garden_kit.reviews.present? %>
+          <% @sum = 0 %>
+          <% @array = [] %>
+          <% garden_kit.reviews.each do |review| %>
+          <% @rating = review.rating %>
+          <% @array << @rating %>
+          <%  @sum += @rating %>
+          <% end %>
+          <% total = @array.size %>
+          <% sum = @sum %>
+          <p class="font-weight-bolder"><i class="fas fa-star"></i><%= "#{sum/total.to_f}" %></p>
+        <% else %>
+          <p><i class="fas fa-star grey-star"></i> No review yet</p>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>
