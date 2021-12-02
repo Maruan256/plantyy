@@ -5,7 +5,7 @@
   width: 300px;
   margin: 20px;
   display: block;
-  font-family: $my-font-robot;
+  font-family: $body-font;
   border-radius: 5px;
 }
 
@@ -19,14 +19,15 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  font-family: $my-font-robot;
+  font-family: $body-font;
 }
 
 .card-kit p {
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 1.3;
   opacity: .8;
   margin: 0;
-  font-family: $my-font-robot;
+  font-family: $body-font;
 }
 
 
@@ -36,7 +37,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  font-family: $my-font-robot;
+  font-family: $body-font;
 }
 
 .card-plant {
@@ -65,20 +66,22 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  font-family: $my-font-robot;
+  font-family: $body-font;
 }
 
 .card-plant p {
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 17px;
+  line-height: 1;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
-  font-family: $my-font-robot;
+  font-family: $body-font;
+
 }
 
 .card-plant .card-plant-infos {
   padding: 16px;
+  text-align: start;
 }
 
 .big-card-plant {
@@ -113,5 +116,5 @@
 #name-price-container{
  width: 217px;
  vertical-align: top;
- font-family: $my-font-robot;
+ font-family: $body-font;
 }

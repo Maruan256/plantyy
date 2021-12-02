@@ -4,7 +4,7 @@
   background: $special-orange;
   transition: background 0.3s ease;
   border-radius: 25px;
-  font-family: $my-font-robot;
+  font-family: $body-font;
   box-shadow: 2px 2px 3px gray;
   font-weight: 900;
   font-size: 24px;
@@ -31,4 +31,26 @@ left: 50%;
 margin-left: -30px;
 scroll-behavior: smooth;
 padding-top: 100px;
+}
+
+
+.toggled-button {
+  border: none;
+  background-color: unset;
+  i {
+    color: $special-orange;
+  }
+
+
+.btn-primary {
+  border-radius: 23px;
+  color: white;
+  padding: 8px;
+  background: $special-orange;
+  transition: background 0.3s ease;
+  border-radius: 25px;
+  font-family: $body-font;
+  box-shadow: 2px 2px 3px gray;
+  font-size: 18px;
+  margin-top: 5px;
 }
