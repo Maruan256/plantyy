@@ -48,10 +48,10 @@
   </div>
 
   <div class="container m-1">
-    <h2>
+  <div data-controller="insert-in-list">
+   <h2 data-insert-in-list-target="total">
       <%= pluralize @garden_kit.reviews.size, "review" %>
-    </h2>
-    <div data-controller="insert-in-list">
+  </h2>
       <div id="reviews" data-insert-in-list-target="items">
         <% @garden_kit.reviews.each do |review| %>
         <%= render 'review', review: review %>
@@ -59,7 +59,7 @@
       </div>
       <div class="form">
         <% if @garden_kit.reviews.blank? %>
-          <h4 data-insert-in-list-target="review">
+          <h4 data-insert-in-list-target="firstreview">
             Be the first to leave a review for <%= @garden_kit.kit_name %>
           </h4>
         <% end %>
