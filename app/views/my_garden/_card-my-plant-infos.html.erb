@@ -5,9 +5,6 @@
   <div class="card-plant-infos" data-activate-my-plants-target='infos'>
     <h2><%= my_plant.plant.name %></h2>
     <p><%= my_plant.plant.description.truncate(52) %>.</p>
-    <%# <i class="fas fa-calendar-check fa-xs ml-2" data-action="click->activate-my-plants#displayForm"></i> %>
-  <%# </div>
-  <div> %>
     <%= simple_form_for my_plant, remote: true,html: {class: '', data: { activate_my_plants_target: 'form', action: 'submit->activate_my_plants#update' } } do |f| %>
       <%= f.hidden_field :active  %>
       <%= button_tag type: 'submit', class: "toggled-button" do %>
