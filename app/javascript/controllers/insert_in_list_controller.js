@@ -2,7 +2,8 @@ import { Controller } from "stimulus";
 import { csrfToken } from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ['items2', 'form2'];
+  static targets = ['items2', 'form2', 'firstreview', 'total'];
+
   send(event) {
     event.preventDefault();
     console.log('whatever2');
@@ -17,7 +18,11 @@ export default class extends Controller {
         if (data.inserted_item) {
           this.items2Target.insertAdjacentHTML('beforeend', data.inserted_item);
         }
+
         this.form2Target.outerHTML = data.form;
+        this.totalTarget.innerText = (Number(this.totalTarget.innerText[0]) + 1) + " reviews"
+        this.firstreviewTarget.classList.add('invisible');
+
       });
-      }
   }
+}
