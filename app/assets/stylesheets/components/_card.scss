@@ -16,10 +16,9 @@
 }
 
 .card-kit h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
-  font-family: $body-font;
 }
 
 .card-kit p {
@@ -28,6 +27,7 @@
   opacity: .8;
   margin: 0;
   font-family: $body-font;
+  font-weight: bolder;
 }
 
 
@@ -66,8 +66,8 @@
 }
 
 .card-plant h2 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 900;
   margin: 0;
   font-family: $body-font;
 }
@@ -75,11 +75,11 @@
 .card-plant p {
   font-size: 17px;
   line-height: 1;
-  opacity: .7;
+  opacity: .9;
   margin-bottom: 0;
   margin-top: 8px;
   font-family: $body-font;
-
+  font-weight: 900;
 }
 
 .card-plant .card-plant-infos {
@@ -126,6 +126,11 @@
   font-weight: bold;
 }
 
+.container {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
 .card-review {
   overflow: hidden;
   background: white;
@@ -136,14 +141,12 @@
   display: block;
   font-family: $body-font;
   border-radius: 5px;
-
-
   padding: 10px;
 
 }
 
 #name-price-container{
- width: 217px;
+ width: 260px;
  vertical-align: top;
  font-family: $body-font;
 }

@@ -18,9 +18,12 @@ body {
 
 
 p {
-  color: $light-purple-grey;
+  color: black;
   font-family: $body-font;
+  font-size: 20px;
+  line-height: 1.4;
 }
+
 body {
   background-color: $light-pink;
   font-family: $body-font;
@@ -52,11 +55,6 @@ font-family: $headers-font;
 }
 h1 {
   font-size: 60px;
-}
-
-p {
-  font-size: 20px;
-  line-height: 1.4;
 }
 
 .form {

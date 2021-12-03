@@ -20,7 +20,7 @@
           <% end %>
           <% total = @array.size %>
           <% sum = @sum %>
-          <p class="font-weight-bolder"><i class="fas fa-star"></i><%= "#{sum/total.to_f}" %></p>
+          <p class="font-weight-bolder"><i class="fas fa-star"></i><%= " #{(sum.to_f/total.to_f).round(1)}" %></p>
         <% else %>
           <p><i class="fas fa-star grey-star"></i> No review yet</p>
         <% end %>
